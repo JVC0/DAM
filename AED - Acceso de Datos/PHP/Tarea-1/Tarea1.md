@@ -21,6 +21,8 @@ else{
 ?>
 ```
 
+![alt text](image-19.png)
+
 2. **Edad permitida**  
    Pide la edad de una persona y muestra:  
    - `"Eres menor de edad"` si es < 18.  
@@ -39,6 +41,8 @@ else{
 ?>
 ```
 
+![alt text](image-18.png)
+
 3. **Positivo, negativo o cero**  
    Comprueba si un número almacenado en una variable es positivo, negativo o cero.  
 
@@ -56,6 +60,8 @@ elseif ($numero < 0 ){
 
 ?>
 ```
+
+![alt text](image-17.png)
 
 4. **Nota final**  
    Pide la nota de un alumno y muestra:  
@@ -80,6 +86,8 @@ elseif ($nota >  4 ){
 ?>
 ```
 
+![alt text](image-16.png)
+
 5. **Contar del 1 al 100**  
    Muestra los números del 1 al 100 en pantalla.  
 
@@ -93,6 +101,8 @@ while ($numeros != 101) {
 }
 ?>
 ```
+
+![alt text](image-15.png)
 
 6. **Suma acumulada**  
    Calcula la suma de los números del 1 al 50 usando un bucle.  
@@ -108,6 +118,8 @@ for ($i = 1; $i <= 50; $i++) {
 
 ```
 
+![alt text](image-14.png)
+
 7. **Tabla de multiplicar**  
    Pide un número y genera su tabla de multiplicar del 1 al 10.  
 
@@ -116,10 +128,12 @@ for ($i = 1; $i <= 50; $i++) {
 $number = 1;
 for ($i = 1; $i <= 10; $i++) {
     $result =$number *$i;
-    echo "$number x $i = $result ";
+    echo "$number x $i = $result \n";
 }
 ?>
 ```
+
+![alt text](image-13.png)
 
 8. **Números pares**  
    Muestra todos los números pares entre 1 y 50.  
@@ -127,10 +141,12 @@ for ($i = 1; $i <= 10; $i++) {
 ```php
 <?php
 for ($i = 2; $i < 50; $i++) {
-    echo $i;
+    echo "$i\n";
 }
 ?>
 ```
+
+![alt text](image-12.png)
 
 9. **Cuenta atrás**  
    Haz un bucle que cuente de 10 a 1 y luego muestre `"¡Fin!"`.  
@@ -145,6 +161,8 @@ while ($numero != 0) {
 echo '¡Fin!';
 ?>
 ```
+
+![alt text](image-11.png)
 
 10. **Factorial**  
     Calcula el factorial de un número introducido (ejemplo: `5! = 120`).  
@@ -163,36 +181,51 @@ echo factorial(5);
 ?>
 ```
 
+![alt text](image-10.png)
+
 11. **Números primos**  
     Escribe un algoritmo que muestre los números primos entre 1 y 50.  
 
 ```php
 <?php
-   for ($i = 2; $i < 50; $i++) {
-        for ($e = 2; $e < $i; $e++) {
-            if ($i % $e != 0) {
-                echo $i 
-            }
+for ($i = 2; $i < 50; $i++) {
+    $isPrime = true;
+    
+    for ($e = 2; $e < $i; $e++) {
+        if ($i % $e == 0) {
+            $isPrime = false;
         }
-}   
+    }
+    
+    if ($isPrime) {
+        echo $i . " ";
+    }
+}
 ?>
 ```
+
+![alt text](image-9.png)
 
 12. **Fibonacci**  
     Genera los primeros 20 términos de la secuencia de Fibonacci.  
 
 ```php
 <?php
-$number = 0;
+$prev = 0;
+$current = 1;
 
 for ($i = 1; $i <= 20; $i++) {
-    $number = $number  + $i-1;
-    echo "$number\n";
+    echo "$prev\n";
+    
+    if ($i < 20) { 
+        $next = $prev + $current;
+        $prev = $current;
+        $current = $next;
+    }
 }
-echo "$number\n";
-
 ?>
 ```
+![alt text](image-8.png)
 
 13. **Múltiplos de un número**  
     Pide un número `n` y muestra sus múltiplos hasta 100.  
@@ -207,6 +240,8 @@ $number = 10 ;
     }
 ?>
 ```
+
+![alt text](image-7.png)
 
 14. **Suma de pares e impares**  
     Calcula la suma de los números pares e impares entre 1 y 100 por separado.  
@@ -226,6 +261,7 @@ echo "$number\n";
 echo $number2;
 ?>
 ```
+![alt text](image-6.png)
 
 15. **Adivinar número**  
     Genera un número aleatorio entre 1 y 20.  
@@ -251,6 +287,8 @@ while ($result != true){
 ?>
 ```
 
+![alt text](image.png)
+
 16. **Número perfecto**  
     Comprueba si un número es perfecto (la suma de sus divisores propios es igual al número).  
 
@@ -270,6 +308,8 @@ if($numero == $result){
 ?>
 ```
 
+![alt text](image-5.png)
+
 17. **Invertir número**  
     Escribe un algoritmo que invierta los dígitos de un número (ejemplo: `123 → 321`).  
 
@@ -281,21 +321,23 @@ echo $inumber;
 
 ?>
 ```
+![alt text](image-4.png)
 
 18. **Palíndromo**  
     Comprueba si una palabra almacenada en una variable es palíndroma.  
 
 ```php
 <?php
-$palabra =reconocer
-$palindromo =strrev(reconocer)
+$palabra = "reconocer";
+$palindromo = strrev("reconocer");
 if ($palabra == $palindromo){
-    echo "es un palindromo "
-}else{
-    echo "no es un palindromo "
+    echo "es un palindromo ";
+} else {
+    echo "no es un palindromo ";
 }
 ?>
 ```
+![alt text](image-3.png)
 
 19. **Máximo común divisor (MCD)**  
     Escribe un algoritmo que calcule el MCD de dos números.  
@@ -320,6 +362,7 @@ echo "$resultado";
 
 ?>
 ```
+![alt text](image-2.png)
 
 20. **Triángulo de asteriscos**  
     Muestra en pantalla un triángulo de altura `n` usando `*`.  
@@ -340,6 +383,6 @@ for ($i = 1; $i <= $n; $i++) {
 }
 ?>
 ```
-
+![alt text](image-1.png)
 
 ---
