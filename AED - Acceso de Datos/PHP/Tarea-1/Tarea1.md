@@ -233,8 +233,21 @@ echo $number2;
 
 ```php
 <?php
-$nombre = readline("¿Cuál es tu nombre? ");
+$rannumber = rand(1,20);
+$result = false;
+
+while ($result != true){
+    $guess = (int)readline("adivina el numero ");
     
+    if ($rannumber == $guess){
+        $result = true;
+        echo "Correcto El numero era $rannumber\n";
+    }elseif ($guess < $rannumber) {
+        echo "Mayor\n";
+    } else {
+        echo "Menor\n";
+    }
+};
 ?>
 ```
 
@@ -244,9 +257,16 @@ $nombre = readline("¿Cuál es tu nombre? ");
 ```php
 <?php
 $numero=6;
-for ($i = 1; $i <= $numero; $i++) {
-    
+$result=0;
+for ($i = 1; $i < $numero; $i++) {
+    if ($numero % $i == 0){
+        $result+=$i;
+    }
 }
+if($numero == $result){
+    echo "el numero es perfecto";
+}
+
 ?>
 ```
 
@@ -267,7 +287,13 @@ echo $inumber;
 
 ```php
 <?php
-
+$palabra =reconocer
+$palindromo =strrev(reconocer)
+if ($palabra == $palindromo){
+    echo "es un palindromo "
+}else{
+    echo "no es un palindromo "
+}
 ?>
 ```
 
@@ -276,6 +302,21 @@ echo $inumber;
 
 ```php
 <?php
+function mcd($a, $b) {
+    
+    while ($b != 0) {
+        $temp = $b;
+        $b = $a % $b;
+        $a = $temp;
+    }
+    return $a;
+}
+
+$numero1 = 48;
+$numero2 = 18;
+$resultado = mcd($numero1, $numero2);
+
+echo "$resultado";
 
 ?>
 ```
@@ -290,5 +331,15 @@ echo $inumber;
     ****
     *****
     ```
+    
+```php
+<?php
+$n = 5;
+for ($i = 1; $i <= $n; $i++) {
+    echo str_repeat("*", $i)."\n";
+}
+?>
+```
+
 
 ---
