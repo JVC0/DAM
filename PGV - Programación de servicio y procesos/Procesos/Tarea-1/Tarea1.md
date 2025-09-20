@@ -35,7 +35,7 @@ Un PCB es una estructura de datos que utiliza el sistema operativoi para almacen
 
 6. Diferencia entre **proceso padre** y **proceso hijo**.  
 
-la diferencia entre un proceso padre y un proceso hijo es que  el proceso padre es el proceso original y el proceso hijo es creado por el proceso padre
+La diferencia entre un proceso padre y un proceso hijo es que  el proceso padre es el proceso original y el proceso hijo es creado por el proceso padre
 
 7. Explica qué ocurre cuando un proceso queda **huérfano** en Linux.  
 
@@ -43,84 +43,103 @@ el proceso que huerfano cuando el proceso padre acaba antes que el
 
 8. ¿Qué es un proceso **zombie**? Da un ejemplo de cómo puede ocurrir.  
 
+Un proceso que a ternimado so ejecucion pero todavia aparece en la tabla de procesos
+
 9. Diferencia entre **concurrencia** y **paralelismo**.  
+
+que con conrrencia son miltiple taresas al mismo tiempo pero no simultaniamente y paralelismo es que se ejecutan al mismo tiempo
 
 10. Explica qué es un **hilo (thread)** y en qué se diferencia de un proceso.  
 
+Un hilo es una de las posibles lineas de ejecución que sigue ese conjunto de instrucciones dentro de un proceso.
 ---
 
 ## Bloque 2: Práctica con comandos en Linux
 
-### Ejercicio 0 (ejemplo resuelto)  
-
-**Pregunta:** ¿Qué comando muestra el directorio actual?  
-
-**Resolución:**  
-
-```bash
-    pwd
-```
-
 11. Usa echo $$ para mostrar el PID del proceso actual.
+
+![alt text](image.png)
 
 12. Usa echo $PPID para mostrar el PID del proceso padre.
 
+![alt text](image-1.png)
+
 13. Ejecuta pidof systemd y explica el resultado.
+
+![alt text](image-2.png)
 
 14. Abre un programa gráfico (ejemplo: gedit) y usa pidof para obtener sus PID.
 
+![alt text](image-3.png)
+![alt text](image-4.png)
+
 15. Ejecuta ps -e y explica qué significan sus columnas.
+
+![alt text](image-5.png)
+
+Las columnas significan pid el id del proceso , TTY donde se ejecuto el proceso, TIME tiempo  total de uso del cpu por el proceso y CMD el comando que incio el proceso
 
 16. Ejecuta ps -f y observa la relación entre procesos padre e hijo.
 
+![alt text](image-6.png)
+
 17. Usa ps -axf o pstree para mostrar el árbol de procesos y dibújalo.
+
+![alt text](image-7.png)
 
 18. Ejecuta top o htop y localiza el proceso con mayor uso de CPU.
 
+![alt text](image-8.png)
+
 19. Ejecuta sleep 100 en segundo plano y busca su PID con ps.
+
+![alt text](image-9.png)
 
 20. Finaliza un proceso con kill <PID> y comprueba con ps que ya no está.
 
+![alt text](image-10.png)
 
-### Ejercicio 0 (ejemplo resuelto)  
 
-**Pregunta:** ¿Qué comando muestra el árbol de procesos en Linux?
-
-**Resolución:**  
-
-```bash
-    pstree
-```
 
 ## Bloque 3: Procesos y jerarquía
 
 21. Identifica el **PID del proceso init/systemd** y explica su función.
 
+![alt text](image-17.png)
+systemd es el sistema de inicio y un administrador de servicios
+
 22. Explica qué ocurre con el **PPID** de un proceso hijo si su padre termina antes.
+
+Cuando su padre termina anter el proceso hijo se convirte en un huerfano y es adoptado por el proceso systemd
 
 23. Ejecuta un programa que genere varios procesos hijos y observa sus PIDs con `ps`.
 
+![alt text](image-14.png)
+
 24. Haz que un proceso quede en **estado suspendido** con `Ctrl+Z` y réanúdalo con `fg`.
+
+![alt text](image-15.png)
 
 25. Lanza un proceso en **segundo plano** con `&` y obsérvalo con `jobs`.
 
+![alt text](image-16.png)
+
 26. Explica la diferencia entre los estados de un proceso: **Running, Sleeping, Zombie, Stopped**.
+
+la diferencia es que running es que el proceso esta corriendo , sleeping esta esperando ,stopped significa que esta detenido, zombie que el proceso esta detenido esperando que el padre lo lea.
 
 27. Usa `ps -eo pid,ppid,stat,cmd` para mostrar los estados de varios procesos.
 
+![alt text](image-13.png)
+
 28. Ejecuta `watch -n 1 ps -e` y observa cómo cambian los procesos en tiempo real.
+
+![alt text](image-12.png)
 
 29. Explica la diferencia entre ejecutar un proceso con `&` y con `nohup`.
 
+& ejecuta en segundo plano mientras que noup evita que el proceso se cierre con SIGHUP 
+
 30. Usa `ulimit -a` para ver los límites de recursos de procesos en tu sistema.
 
-###  Ejercicio 0 (ejemplo resuelto)  
-
-**Pregunta:** ¿Qué comando muestra el árbol de procesos en Linux?
-
-**Resolución:**  
-
-```bash
-    pstree
-```
-
+![alt text](image-11.png)
