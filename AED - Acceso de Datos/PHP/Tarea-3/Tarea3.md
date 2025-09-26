@@ -29,6 +29,8 @@ datos.txt
 Hola Mundo desde PHP
 ```
 
+[Codigo](.\ejercicio1.php)
+
 ---
 
 ### 2) Guardar números en un fichero
@@ -47,6 +49,8 @@ numeros.txt
 10
 ```
 
+[Codigo](.\ejercicio2php)
+
 ---
 
 ### 3) Contar palabras en un fichero
@@ -60,6 +64,8 @@ numeros.txt
 texto.txt
 PHP es muy divertido y potente.
 ```
+
+[Codigo](.\ejercicio3php)
 
 ---
 
@@ -78,6 +84,8 @@ Marta
 Carlos
 Julia
 ```
+
+[Codigo](.\ejercicio4.php)
 
 ---
 
@@ -100,6 +108,8 @@ copia.txt
 Este es el archivo original.
 ```
 
+[Codigo](.\ejercicio5.php)
+
 ---
 
 ### 6) Invertir el contenido de un fichero
@@ -121,6 +131,8 @@ frase_invertida.txt
 PHP aloH
 ```
 
+[Codigo](.\ejercicio6.php)
+
 ---
 
 ### 7) Calcular suma desde fichero
@@ -134,6 +146,8 @@ PHP aloH
 datos_numericos.txt
 10,20,30,40
 ```
+
+[Codigo](.\ejercicio7.php)
 
 ---
 
@@ -152,6 +166,8 @@ tabla5.txt
 5 x 10 = 50
 ```
 
+[Codigo](.\ejercicio8.php)
+
 ---
 
 ### 9) Registrar entradas de usuario
@@ -167,6 +183,8 @@ Ana
 Pedro
 Lucía
 ```
+
+[Codigo](.\ejercicio9.php)
 
 ---
 
@@ -185,6 +203,8 @@ datos.json
 ]
 ```
 
+[Codigo](.\ejercicio10.php)
+
 ---
 
 ### 11) Diario personal secreto
@@ -198,6 +218,8 @@ diario.txt
 [2025-09-24 10:00] Hoy aprendí PHP con ficheros 😄
 [2025-09-24 12:00] Almorcé pizza mientras programaba.
 ```
+
+[Codigo](.\ejercicio11.php)
 
 ---
 
@@ -214,6 +236,8 @@ Mario: 9
 Sonic: 8
 ```
 
+[Codigo](.\ejercicio12.php)
+
 ---
 
 ### 13) Canción aleatoria
@@ -228,6 +252,8 @@ Hysteria
 Bohemian Rhapsody
 Africa
 ```
+
+[Codigo](.\ejercicio13.php)
 
 ---
 
@@ -244,6 +270,8 @@ El Wi-Fi decidió tomarse el día libre.
 Me abdujeron los marcianos.
 ```
 
+[Codigo](.\ejercicio14.php)
+
 ---
 
 ### 15) Lista de chistes (rotativos)
@@ -259,6 +287,8 @@ Ayer vi un bit triste… estaba des-bit-ido.
 Yo no sudo, compilo.
 ```
 
+[Codigo](.\ejercicio15.php)
+
 ---
 
 ### 16) Adivina la palabra
@@ -273,6 +303,8 @@ manzana
 platano
 cereza
 ```
+
+[Codigo](.\ejercicio16.php)
 
 ---
 
@@ -296,6 +328,8 @@ Tigre
 Lobo
 ```
 
+[Codigo](.\ejercicio17.php)
+
 ---
 
 ### 18) Encuesta de comidas favoritas
@@ -312,6 +346,8 @@ pizza
 pasta
 ```
 
+[Codigo](.\ejercicio18.php)
+
 ---
 
 ### 19) Simulador de tweets
@@ -325,6 +361,8 @@ tweets.txt
 [2025-09-24 09:30] Aprendiendo PHP con ejercicios divertidos #php
 [2025-09-24 10:00] Otro día más programando 🚀
 ```
+
+[Codigo](.\ejercicio19.php)
 
 ---
 
@@ -359,3 +397,5 @@ tacos
 ramen
 helado
 ```
+
+[Codigo](.\ejercicio20.php)
