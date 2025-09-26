@@ -29,7 +29,7 @@ datos.txt
 Hola Mundo desde PHP
 ```
 
-[Codigo](AED - Acceso de Datos\PHP\Tarea-3\ejercicio1.php)
+[Codigo](\ejercicio1.php)
 
 ---
 
