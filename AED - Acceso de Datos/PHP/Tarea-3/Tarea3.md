@@ -29,7 +29,7 @@ datos.txt
 Hola Mundo desde PHP
 ```
 
-[Codigo](\ejercicio1.php)
+[Codigo](ejercicio1.php)
 
 ---
 
@@ -49,7 +49,7 @@ numeros.txt
 10
 ```
 
-[Codigo](.\ejercicio2php)
+[Codigo](ejercicio2.php)
 
 ---
 
@@ -65,7 +65,7 @@ texto.txt
 PHP es muy divertido y potente.
 ```
 
-[Codigo](.\ejercicio3php)
+[Codigo](ejercicio3.php)
 
 ---
 
@@ -85,7 +85,7 @@ Carlos
 Julia
 ```
 
-[Codigo](.\ejercicio4.php)
+[Codigo](ejercicio4.php)
 
 ---
 
@@ -108,7 +108,7 @@ copia.txt
 Este es el archivo original.
 ```
 
-[Codigo](.\ejercicio5.php)
+[Codigo](ejercicio5.php)
 
 ---
 
@@ -131,7 +131,7 @@ frase_invertida.txt
 PHP aloH
 ```
 
-[Codigo](.\ejercicio6.php)
+[Codigo](ejercicio6.php)
 
 ---
 
@@ -147,7 +147,7 @@ datos_numericos.txt
 10,20,30,40
 ```
 
-[Codigo](.\ejercicio7.php)
+[Codigo](ejercicio7.php)
 
 ---
 
@@ -166,7 +166,7 @@ tabla5.txt
 5 x 10 = 50
 ```
 
-[Codigo](.\ejercicio8.php)
+[Codigo](ejercicio8.php)
 
 ---
 
@@ -184,7 +184,7 @@ Pedro
 Lucía
 ```
 
-[Codigo](.\ejercicio9.php)
+[Codigo](ejercicio9.php)
 
 ---
 
@@ -203,7 +203,7 @@ datos.json
 ]
 ```
 
-[Codigo](.\ejercicio10.php)
+[Codigo](ejercicio10.php)
 
 ---
 
@@ -219,7 +219,7 @@ diario.txt
 [2025-09-24 12:00] Almorcé pizza mientras programaba.
 ```
 
-[Codigo](.\ejercicio11.php)
+[Codigo](ejercicio11.php)
 
 ---
 
@@ -236,7 +236,7 @@ Mario: 9
 Sonic: 8
 ```
 
-[Codigo](.\ejercicio12.php)
+[Codigo](ejercicio12.php)
 
 ---
 
@@ -253,7 +253,7 @@ Bohemian Rhapsody
 Africa
 ```
 
-[Codigo](.\ejercicio13.php)
+[Codigo](ejercicio13.php)
 
 ---
 
@@ -270,7 +270,7 @@ El Wi-Fi decidió tomarse el día libre.
 Me abdujeron los marcianos.
 ```
 
-[Codigo](.\ejercicio14.php)
+[Codigo](ejercicio14.php)
 
 ---
 
@@ -287,7 +287,7 @@ Ayer vi un bit triste… estaba des-bit-ido.
 Yo no sudo, compilo.
 ```
 
-[Codigo](.\ejercicio15.php)
+[Codigo](ejercicio15.php)
 
 ---
 
@@ -304,7 +304,7 @@ platano
 cereza
 ```
 
-[Codigo](.\ejercicio16.php)
+[Codigo](ejercicio16.php)
 
 ---
 
@@ -328,7 +328,7 @@ Tigre
 Lobo
 ```
 
-[Codigo](.\ejercicio17.php)
+[Codigo](ejercicio17.php)
 
 ---
 
@@ -346,7 +346,7 @@ pizza
 pasta
 ```
 
-[Codigo](.\ejercicio18.php)
+[Codigo](ejercicio18.php)
 
 ---
 
@@ -362,7 +362,7 @@ tweets.txt
 [2025-09-24 10:00] Otro día más programando 🚀
 ```
 
-[Codigo](.\ejercicio19.php)
+[Codigo](ejercicio19.php)
 
 ---
 
@@ -398,4 +398,4 @@ ramen
 helado
 ```
 
-[Codigo](.\ejercicio20.php)
+[Codigo](ejercicio20.php)
