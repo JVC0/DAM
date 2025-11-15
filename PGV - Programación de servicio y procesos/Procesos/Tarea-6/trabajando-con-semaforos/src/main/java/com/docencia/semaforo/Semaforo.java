@@ -1,56 +1,51 @@
 package com.docencia.semaforo;
 
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Semaforo implements Runnable {
+    private final String color;
     private static final Semaphore semaphore = new Semaphore(1, true);
-    private AtomicBoolean corriendo = new AtomicBoolean(true);
+
+    public Semaforo(String color) {
+        this.color = color;
+    }
 
     @Override
     public void run() {
         try {
-            while (corriendo) {
-                semaphore.acquire();
-                System.out.println("ROJO");
-                Thread.sleep(3000);
+            semaphore.acquire();
+            System.out.println("Color actual: " + color);
 
-                System.out.println("AMBAR");
+            if ("ROJO".equals(color.toUpperCase())) {
+                Thread.sleep(3000);
+            } else if ("VERDE".equals(color.toUpperCase())) {
+                Thread.sleep(3000);
+            } else if ("AMBAR".equals(color.toUpperCase())) {
                 Thread.sleep(1000);
-
-                System.out.println("VERDE");
-                Thread.sleep(3000);
             }
+
+            semaphore.release();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
     }
-public void stop() {
-        running.set(false);
-    }
+
     public static void main(String[] args) throws InterruptedException {
-        Thread trafficLightThread = new Thread(new Semaforo());
-        trafficLightThread.start();
-        Thread.sleep(20000);
-         trafficLight.stop();
-        trafficLightThread.interrupt();
-        trafficLightThread.join();
+        int iterations = 3;
+
+
+        for (int i = 0; i < iterations; i++) {
+            Thread redTrafficLightThread = new Thread(new Semaforo("ROJO"));
+            Thread greenTrafficLightThread = new Thread(new Semaforo("VERDE"));
+            Thread amberTrafficLightThread = new Thread(new Semaforo("AMBAR"));
+
+            redTrafficLightThread.start();
+            greenTrafficLightThread.start();
+            amberTrafficLightThread.start();
+            greenTrafficLightThread.join();
+            redTrafficLightThread.join();
+            amberTrafficLightThread.join();
+        }
+
     }
 }
-// Haciendo funcionar un semáforo casero
-
-// Simula un semáforo de tráfico con tres estados: ROJO, ÁMBAR, VERDE.
-
-// Crea un programa que:
-
-// Muestra en consola el color actual.
-// Espera un tiempo según el color (ROJO 3s, VERDE 3s, ÁMBAR 1s).
-// Cambia al siguiente color y repite en bucle. -El programa principal (main)
-// debe poder parar la simulación después de 20 segundos.
-// Objetivo:
-
-// Trabajar con Thread.sleep() y controlar la vida de un hilo.
-// Clase ColorSemaforo:
-
-// color: ROJO, AMBAR, VERDE.
-// semaforo: para permitir cambiar de estado de color.
