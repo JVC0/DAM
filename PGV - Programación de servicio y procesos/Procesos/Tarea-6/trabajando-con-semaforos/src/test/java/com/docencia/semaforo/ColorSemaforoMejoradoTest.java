@@ -11,21 +11,15 @@ public class ColorSemaforoMejoradoTest {
     public void colorSemaforoMejoradoTest()throws InterruptedException{
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
-        int iterations = 3;
-
-
-        for (int i = 0; i < iterations; i++) {
-            Thread redTrafficLightThread = new Thread(new Semaforo("ROJO"));
-            Thread greenTrafficLightThread = new Thread(new Semaforo("VERDE"));
-            Thread amberTrafficLightThread = new Thread(new Semaforo("AMBAR"));
-
-            redTrafficLightThread.start();
-            greenTrafficLightThread.start();
-            amberTrafficLightThread.start();
-            greenTrafficLightThread.join();
-            redTrafficLightThread.join();
-            amberTrafficLightThread.join();
-        }
+        Thread redTrafficLightThread = new Thread(new ColorSemaforoMejorado("ROJO"));
+        Thread greenTrafficLightThread = new Thread(new ColorSemaforoMejorado("VERDE"));
+        Thread amberTrafficLightThread = new Thread(new ColorSemaforoMejorado("AMBAR"));
+        redTrafficLightThread.start();
+        greenTrafficLightThread.start();
+        amberTrafficLightThread.start();
+        greenTrafficLightThread.join();
+        redTrafficLightThread.join();
+        amberTrafficLightThread.join();
         String output = outContent.toString();
         String[] sequence= output.split("\\n");
         Assertions.assertTrue(output.contains("ROJO") && output.contains("VERDE")&& output.contains("AMBAR"));

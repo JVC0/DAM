@@ -31,7 +31,7 @@ public class Semaforo implements Runnable {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        int iterations = 3;
+        int iterations = 4;
 
 
         for (int i = 0; i < iterations; i++) {
