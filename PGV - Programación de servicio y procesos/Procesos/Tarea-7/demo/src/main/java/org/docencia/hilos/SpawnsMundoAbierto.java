@@ -17,19 +17,43 @@ public class SpawnsMundoAbierto {
                 "Templo Prohibido"
         };
 
-        private final String[] enemigos = {
+        private final String[] enemigosComunes = {
                 "Slime Mutante",
                 "Esqueleto Guerrero",
                 "Mecha-Dragón",
                 "Bandido del Desierto",
                 "Lich Supremo"
         };
+ private final String[] enemigosRaros = {
+                "Mecha-Dragon",
+                "Lich Supremo",
+                "Cazador de Sombras",
+                "Titan Ancestral",
+                "Serpiente Cosmica"
+        };
 
+        private final String[] enemigosEpicos = {
+                "Dios Primigenio",
+                "Entidad del Vacio",
+                "Guardian del Abismo"
+        };
         @Override
         public void run() {
             String hilo = Thread.currentThread().getName();
             String zona = zonas[(int)(Math.random() * zonas.length)];
-            String enemigo = enemigos[(int)(Math.random() * enemigos.length)];
+            int probabilidad = (int)(Math.random() * 100);
+            if (probabilidad < 0.10) {
+                String enemigo = enemigosEpicos[(int)(Math.random() * enemigosEpicos.length)];
+                System.out.println("[" + LocalTime.now() + "][" + hilo + "] ¡¡SPAWN ÉPICO DE " +
+                        enemigo + " en " + zona + "!!");
+                return;
+            } else if (probabilidad < 0.40) {
+                String enemigo = enemigosRaros[(int)(Math.random() * enemigosRaros.length)];
+                System.out.println("[" + LocalTime.now() + "][" + hilo + "] Spawn raro de " +
+                        enemigo + " en " + zona);
+            }
+            String enemigo = enemigosComunes[(int)(Math.random() * enemigosComunes.length)];
+
             System.out.println("[" + LocalTime.now() + "][" + hilo + "] Spawn de " +
                     enemigo + " en " + zona);
         }
