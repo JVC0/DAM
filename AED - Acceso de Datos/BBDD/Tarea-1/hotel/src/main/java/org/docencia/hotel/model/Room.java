@@ -11,27 +11,25 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
-    @Column(name = "number")
-    private String numero;
+    @Column(name = "number",nullable = false )
+    private String number;
     @Column(name = "type")
-    private String tipo;
+    private String type;
     @Column(name = "price_per_night")
-    private double precio_por_noche;
+    private double price_per_night;
 
     @ManyToOne
-    @JoinColumn(name = "hotel_id")
+    @JoinColumn(name = "hotel_id",nullable = false)
     private Hotel hotel;
-
-
 
     public Room() {
     }
 
-    public Room(String id, String numero, String tipo, double precio_por_noche, Hotel hotel) {
+    public Room(String id, String number, String type, double price_per_night, Hotel hotel) {
         this.id = id;
-        this.numero = numero;
-        this.tipo = tipo;
-        this.precio_por_noche = precio_por_noche;
+        this.number = number;
+        this.type = type;
+        this.price_per_night = price_per_night;
         this.hotel = hotel;
     }
 
@@ -43,28 +41,28 @@ public class Room {
         this.id = id;
     }
 
-    public String getNumero() {
-        return this.numero;
+    public String getNumber() {
+        return this.number;
     }
 
-    public void setNumero(String numero) {
-        this.numero = numero;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public String getTipo() {
-        return this.tipo;
+    public String getType() {
+        return this.type;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public double getPrecio_por_noche() {
-        return this.precio_por_noche;
+    public double getPrice_per_night() {
+        return this.price_per_night;
     }
 
-    public void setPrecio_por_noche(double precio_por_noche) {
-        this.precio_por_noche = precio_por_noche;
+    public void setPrice_per_night(double price_per_night) {
+        this.price_per_night = price_per_night;
     }
 
     public Hotel getHotel() {
@@ -74,6 +72,7 @@ public class Room {
     public void setHotel(Hotel hotel) {
         this.hotel = hotel;
     }
+
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -82,23 +81,27 @@ public class Room {
             return false;
         }
         Room room = (Room) o;
-        return Objects.equals(id, room.id) && Objects.equals(numero, room.numero) && Objects.equals(tipo, room.tipo) && precio_por_noche == room.precio_por_noche && Objects.equals(hotel, room.hotel);
+        return Objects.equals(id, room.id) && Objects.equals(number, room.number) && Objects.equals(type, room.type) && price_per_night == room.price_per_night && Objects.equals(hotel, room.hotel);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, numero, tipo, precio_por_noche, hotel);
+        return Objects.hash(id, number, type, price_per_night, hotel);
     }
 
     @Override
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", numero='" + getNumero() + "'" +
-            ", tipo='" + getTipo() + "'" +
-            ", precio_por_noche='" + getPrecio_por_noche() + "'" +
+            ", number='" + getNumber() + "'" +
+            ", type='" + getType() + "'" +
+            ", price_per_night='" + getPrice_per_night() + "'" +
             ", hotel='" + getHotel() + "'" +
             "}";
     }
+
+
+
+
 
 }

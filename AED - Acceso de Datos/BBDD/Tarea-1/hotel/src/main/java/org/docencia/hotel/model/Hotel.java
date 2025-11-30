@@ -1,16 +1,12 @@
 package org.docencia.hotel.model;
 
-import java.util.List;
+import java.util.*;
 
 import org.springframework.data.annotation.Id;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import java.util.Objects;
+
 
 @Entity
 @Table(name = "hotels")
@@ -19,11 +15,11 @@ public class Hotel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
-    @Column(name = "name")
-    private String nombre;
+    @Column(name = "name" ,nullable = false)
+    private String name;
 
     @Column(name = "address")
-    private String direccion;
+    private String address;
     
     @OneToMany(mappedBy = "hotel")
     private List<Room> rooms;
@@ -31,10 +27,10 @@ public class Hotel {
     public Hotel() {
     }
 
-    public Hotel(String id, String nombre, String direccion, List<Room> rooms) {
+    public Hotel(String id, String name, String address, List<Room> rooms) {
         this.id = id;
-        this.nombre = nombre;
-        this.direccion = direccion;
+        this.name = name;
+        this.address = address;
         this.rooms = rooms;
     }
 
@@ -46,20 +42,20 @@ public class Hotel {
         this.id = id;
     }
 
-    public String getNombre() {
-        return this.nombre;
+    public String getName() {
+        return this.name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getDireccion() {
-        return this.direccion;
+    public String getAddress() {
+        return this.address;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public List<Room> getRooms() {
@@ -70,7 +66,6 @@ public class Hotel {
         this.rooms = rooms;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (o == this)
@@ -79,22 +74,23 @@ public class Hotel {
             return false;
         }
         Hotel hotel = (Hotel) o;
-        return Objects.equals(id, hotel.id) && Objects.equals(nombre, hotel.nombre) && Objects.equals(direccion, hotel.direccion) && Objects.equals(rooms, hotel.rooms);
+        return Objects.equals(id, hotel.id) && Objects.equals(name, hotel.name) && Objects.equals(address, hotel.address) && Objects.equals(rooms, hotel.rooms);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nombre, direccion, rooms);
+        return Objects.hash(id, name, address, rooms);
     }
 
     @Override
     public String toString() {
         return "{" +
             " id='" + getId() + "'" +
-            ", nombre='" + getNombre() + "'" +
-            ", direccion='" + getDireccion() + "'" +
+            ", name='" + getName() + "'" +
+            ", address='" + getAddress() + "'" +
             ", rooms='" + getRooms() + "'" +
             "}";
     }
 
+    
 }
