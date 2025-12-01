@@ -4,20 +4,42 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Objects;
 
+/**
+ * Documento de MongoDB que almacena las preferencias de un {@code Guest}.
+ * <p>
+ * Cada instancia está asociada a un huésped relacional mediante el campo
+ * {@link #guestId}, que corresponde al identificador de la entidad
+ * {@code Guest} almacenada en la base de datos relacional.
+ */
 @Document(collection = "guest_preferences")
 public class GuestPreferences {
+
     @Id
     private String id; 
+
+
     private String guestId;
+
+
     private String preferredLanguage;
+
+
     private boolean newsletterOptIn;
+
+
     private String favoriteRoomType;
+
+
     private String[] tags;
+
+
     private String notes;
     
 
+
     public GuestPreferences() {
     }
+
 
     public GuestPreferences(String id, String guestId, String preferredLanguage, boolean newsletterOptIn, String favoriteRoomType, String[] tags, String notes) {
         this.id = id;
@@ -29,61 +51,76 @@ public class GuestPreferences {
         this.notes = notes;
     }
 
+
     public String getId() {
         return this.id;
     }
+
 
     public void setId(String id) {
         this.id = id;
     }
 
+
     public String getGuestId() {
         return this.guestId;
     }
+
 
     public void setGuestId(String guestId) {
         this.guestId = guestId;
     }
 
+
     public String getPreferredLanguage() {
         return this.preferredLanguage;
     }
+
 
     public void setPreferredLanguage(String preferredLanguage) {
         this.preferredLanguage = preferredLanguage;
     }
 
+
     public boolean isNewsletterOptIn() {
         return this.newsletterOptIn;
     }
+
 
     public boolean getNewsletterOptIn() {
         return this.newsletterOptIn;
     }
 
+
     public void setNewsletterOptIn(boolean newsletterOptIn) {
         this.newsletterOptIn = newsletterOptIn;
     }
+
 
     public String getFavoriteRoomType() {
         return this.favoriteRoomType;
     }
 
+
     public void setFavoriteRoomType(String favoriteRoomType) {
         this.favoriteRoomType = favoriteRoomType;
     }
+
 
     public String[] getTags() {
         return this.tags;
     }
 
+
     public void setTags(String[] tags) {
         this.tags = tags;
     }
 
+
     public String getNotes() {
         return this.notes;
     }
+
 
     public void setNotes(String notes) {
         this.notes = notes;

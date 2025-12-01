@@ -16,12 +16,6 @@ public abstract class AbstractJpaRepository<T, ID> {
         this.entityClass = entityClass;
     }
 
-    /**
-     * Busca una entidad por su ID.
-     * 
-     * @param id El identificador de la entidad
-     * @return Optional que contiene la entidad si existe, o vacío si no
-     */
     public Optional<T> findById(ID id) {
         Optional<T> entity = Optional.ofNullable(em.find(entityClass, id));
         return entity;

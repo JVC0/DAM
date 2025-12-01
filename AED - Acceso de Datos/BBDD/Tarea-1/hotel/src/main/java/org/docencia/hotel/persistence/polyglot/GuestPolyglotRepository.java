@@ -41,7 +41,6 @@ public class GuestPolyglotRepository implements GuestRepository {
 
     @Override
     public Optional<Guest> findById(String id) {
-        // 1. Cargar el Guest básico desde H2
         Optional<Guest> guestOpt = guestJpaRepository.findById(id);
         
         if (guestOpt.isEmpty()) {
@@ -49,11 +48,7 @@ public class GuestPolyglotRepository implements GuestRepository {
         }
         
         Guest guest = guestOpt.get();
-        
-        // 2. Cargar las preferencias desde MongoDB
         Optional<GuestPreferences> preferencesOpt = preferencesRepository.findByGuestId(id);
-        
-        // 3. Asignar las preferencias al guest (campo @Transient)
         preferencesOpt.ifPresent(guest::setPreferences);
         
         return Optional.of(guest);
@@ -62,8 +57,6 @@ public class GuestPolyglotRepository implements GuestRepository {
     @Override
     public List<Guest> findAll() {
         List<Guest> guests = guestJpaRepository.findAll();
-        
-        // Cargar preferencias para cada huésped
         return guests.stream()
                 .map(guest -> {
                     preferencesRepository.findByGuestId(guest.getId())
@@ -75,10 +68,7 @@ public class GuestPolyglotRepository implements GuestRepository {
 
     @Override
     public Guest save(Guest guest) {
-        // 1. Guardar la parte relacional en H2
         Guest savedGuest = guestJpaRepository.save(guest);
-        
-        // 2. Guardar las preferencias en MongoDB (si existen)
         if (guest.getPreferences() != null) {
             GuestPreferences preferences = guest.getPreferences();
             preferences.setGuestId(savedGuest.getId());
@@ -91,10 +81,7 @@ public class GuestPolyglotRepository implements GuestRepository {
 
     @Override
     public boolean deleteById(String id) {
-        // 1. Eliminar preferencias de MongoDB
         preferencesRepository.deleteByGuestId(id);
-        
-        // 2. Eliminar el guest de H2
-        return guestJpaRepository.deleteById(id);
+        return true;
     }
 }

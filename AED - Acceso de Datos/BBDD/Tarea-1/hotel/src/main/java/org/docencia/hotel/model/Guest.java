@@ -6,22 +6,45 @@ import org.springframework.data.annotation.Id;
 import jakarta.persistence.*;
 import java.util.Objects;
 
+/**
+ * Entidad JPA que representa a un huésped del hotel.
+ * <p>
+ * Los datos básicos se almacenan en la base de datos relacional (H2) y,
+ * opcionalmente, se asocian con un documento {@link GuestPreferences} en MongoDB
+ * a través del campo {@link #preferences}.
+ */
 @Entity
 @Table(name = "guest")
 public class Guest {
+
+
     @Id
     private String id;
+
+
     @Column(name = "full_name", nullable = false)
     private String full_name;
+
+
     @Column(name = "email")
     private String email;
+
     @Column(name = "phone")
     private String phone;
+
+    /**
+     * Preferencias asociadas al huésped almacenadas en MongoDB.
+     * <p>
+     * Este campo es {@link Transient} porque no se persiste en la base de
+     * datos relacional; se carga y guarda a través de un repositorio NoSQL.
+     */
     @Transient
     private GuestPreferences preferences;
 
+
     public Guest() {
     }
+
 
     public Guest(String id, String full_name, String email, String phone, GuestPreferences preferences) {
         this.id = id;
@@ -31,29 +54,36 @@ public class Guest {
         this.preferences = preferences;
     }
 
+
     public String getId() {
         return this.id;
     }
+
 
     public void setId(String id) {
         this.id = id;
     }
 
+
     public String getFull_name() {
         return this.full_name;
     }
+
 
     public void setFull_name(String full_name) {
         this.full_name = full_name;
     }
 
+
     public String getEmail() {
         return this.email;
     }
 
+
     public void setEmail(String email) {
         this.email = email;
     }
+
 
     public String getPhone() {
         return this.phone;
@@ -63,14 +93,15 @@ public class Guest {
         this.phone = phone;
     }
 
+
     public GuestPreferences getPreferences() {
         return this.preferences;
     }
 
+
     public void setPreferences(GuestPreferences preferences) {
         this.preferences = preferences;
     }
-
 
     @Override
     public boolean equals(Object o) {
